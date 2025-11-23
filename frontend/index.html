@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Breach Checker – Privacy OSINT Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Password Breach Checker – Privacy OSINT Dashboard</h1>
+    <p>Local-only, legal OSINT helper for your personal security.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Email Breach Scanner</h2>
+      <label>Email</label>
+      <input type="email" id="email-input" placeholder="you@example.com">
+      <label>HIBP API Key (optional)</label>
+      <input type="text" id="api-key-input" placeholder="Optional key">
+      <button id="email-btn">Scan Email</button>
+      <pre id="email-result"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Password Breach Checker</h2>
+      <label>Password</label>
+      <input type="password" id="password-input" placeholder="Enter password">
+      <button id="password-btn">Scan Password</button>
+      <pre id="password-result"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Username / Phone Search (Local)</h2>
+      <label>Username or phone</label>
+      <input type="text" id="username-input" placeholder="username or phone">
+      <button id="username-btn">Scan Local Dumps</button>
+      <pre id="username-result"></pre>
+      <label>Upload local TXT/CSV dataset</label>
+      <input type="file" id="dataset-file">
+      <button id="upload-btn">Upload Dataset</button>
+      <pre id="upload-result"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Image Analysis (Local AI)</h2>
+      <label>Upload image (base64 encoded locally)</label>
+      <input type="file" id="image-file" accept="image/*">
+      <button id="image-btn">Analyze Image</button>
+      <pre id="image-result"></pre>
+    </section>
+
+    <section class="card">
+      <h2>AI Privacy Risk Engine</h2>
+      <button id="risk-btn">Generate Risk Report</button>
+      <pre id="risk-result"></pre>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
