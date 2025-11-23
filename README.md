@@ -95,8 +95,7 @@ uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
 - Protect your HIBP API key; do not hardcode it in the frontend.
 - Use HTTPS or run locally; avoid exposing the service publicly.
 
-## Screenshot Placeholder
-_Add your UI screenshot here._
+
 
 ## License
 MIT License
