@@ -1,0 +1,84 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #22d3ee;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: linear-gradient(120deg, #0ea5e9, #22d3ee);
+  color: #0f172a;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  padding: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px;
+  color: var(--muted);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: var(--text);
+}
+
+button {
+  margin-top: 12px;
+  background: var(--accent);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #0f172a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+pre {
+  background: #0b1220;
+  color: #a5f3fc;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 220px;
+}
