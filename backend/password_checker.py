@@ -25,7 +25,8 @@ async def check_password_breach(password: str) -> Dict[str, int]:
     hashed = sha1_hex(password)
     prefix, suffix = hashed[:5], hashed[5:]
     url = PWNED_API.format(prefix=prefix)
-    async with httpx.AsyncClient(timeout=15.0) as client:
+    headers = {"User-Agent": "Password-Breach-Checker/1.0"}
+    async with httpx.AsyncClient(timeout=15.0, headers=headers) as client:
         response = await client.get(url)
     response.raise_for_status()
     hits = parse_pwned_response(prefix, response.text)

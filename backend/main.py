@@ -87,7 +87,10 @@ async def upload_dataset(file: UploadFile = File(...)) -> dict:
         raise HTTPException(status_code=400, detail="Unsupported file type. Use txt or csv.")
     target_dir = data_directory()
     target_dir.mkdir(parents=True, exist_ok=True)
-    target_path = target_dir / file.filename
+    sanitized_name = Path(file.filename).name
+    if not sanitized_name or sanitized_name != file.filename:
+        raise HTTPException(status_code=400, detail="Invalid filename provided.")
+    target_path = target_dir / sanitized_name
     content = await file.read()
     with target_path.open("wb") as handle:
         handle.write(content)
